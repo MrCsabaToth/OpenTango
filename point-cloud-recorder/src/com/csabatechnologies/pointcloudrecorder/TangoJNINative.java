@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.projecttango.experiments.nativepointcloud;
+package com.csabatechnologies.pointcloudrecorder;
 
 /**
  * Interfaces between C and Java.
  */
 public class TangoJNINative {
   static {
-    System.loadLibrary("point_cloud_jni_example");
+    System.loadLibrary("point_cloud_jni");
   }
 
   public static native void initGlContent();

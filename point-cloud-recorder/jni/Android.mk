@@ -22,7 +22,7 @@ LOCAL_EXPORT_C_INCLUDES := ../tango-service-sdk/include
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE    := libpoint_cloud_jni_example
+LOCAL_MODULE    := libpoint_cloud_jni
 LOCAL_SHARED_LIBRARIES := libtango-prebuilt
 LOCAL_CFLAGS    := -std=c++11
 LOCAL_SRC_FILES := jni/tango_data.cpp \

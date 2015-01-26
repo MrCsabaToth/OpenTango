@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.projecttango.experiments.nativepointcloud;
+package com.csabatechnologies.pointcloudrecorder;
 
 import android.opengl.GLSurfaceView;
 import javax.microedition.khronos.egl.EGLConfig;

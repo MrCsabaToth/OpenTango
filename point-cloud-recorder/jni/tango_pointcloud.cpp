@@ -349,32 +349,32 @@ Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_freeGLContent(
 
 // Graphic interfaces.
 JNIEXPORT void JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_initGlContent(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_initGlContent(
     JNIEnv*, jobject) {
   InitGlContent();
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_setupGraphic(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_setupGraphic(
     JNIEnv*, jobject, jint width, jint height) {
   SetupGraphics(width, height);
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_render(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_render(
     JNIEnv*, jobject) {
   RenderFrame();
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_setCamera(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_setCamera(
     JNIEnv*, jobject, int camera_index) {
   SetCamera(static_cast<CameraType>(camera_index));
 }
 
 // Tango data interfaces.
 JNIEXPORT jstring JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getPoseString(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_getPoseString(
     JNIEnv* env, jobject) {
   pthread_mutex_lock(&TangoData::GetInstance().pose_mutex);
   std::string ret_string = TangoData::GetInstance().pose_string;
@@ -383,7 +383,7 @@ Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getPoseString(
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getEventString(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_getEventString(
     JNIEnv* env, jobject) {
   pthread_mutex_lock(&TangoData::GetInstance().event_mutex);
   std::string ret_string = TangoData::GetInstance().event_string;
@@ -392,14 +392,14 @@ Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getEventString
 }
 
 JNIEXPORT jstring JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getVersionNumber(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_getVersionNumber(
     JNIEnv* env, jobject) {
   return (env)
       ->NewStringUTF(TangoData::GetInstance().lib_version_string.c_str());
 }
 
 JNIEXPORT jint JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getVerticesCount(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_getVerticesCount(
     JNIEnv*, jobject) {
   pthread_mutex_lock(&TangoData::GetInstance().xyzij_mutex);
   int ret_val = TangoData::GetInstance().depth_buffer_size;
@@ -408,7 +408,7 @@ Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getVerticesCou
 }
 
 JNIEXPORT float JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getAverageZ(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_getAverageZ(
     JNIEnv*, jobject) {
   pthread_mutex_lock(&TangoData::GetInstance().xyzij_mutex);
   float ret_val = TangoData::GetInstance().depth_average_length;
@@ -417,7 +417,7 @@ Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getAverageZ(
 }
 
 JNIEXPORT float JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getFrameDeltaTime(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_getFrameDeltaTime(
     JNIEnv*, jobject) {
   pthread_mutex_lock(&TangoData::GetInstance().xyzij_mutex);
   float ret_val = TangoData::GetInstance().depth_frame_delta_time;
@@ -427,7 +427,7 @@ Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_getFrameDeltaT
 
 // Touching GL interface.
 JNIEXPORT void JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_startSetCameraOffset(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_startSetCameraOffset(
     JNIEnv*, jobject) {
   if (cam != NULL) {
     cam_start_angle[0] = cam_cur_angle[0];
@@ -437,7 +437,7 @@ Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_startSetCamera
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_experiments_nativepointcloud_TangoJNINative_setCameraOffset(
+Java_com_csabatechnologies_pointcloudrecorder_TangoJNINative_setCameraOffset(
     JNIEnv*, jobject, float rotation_x, float rotation_y, float dist) {
   if (cam != NULL) {
     cam_cur_angle[0] = cam_start_angle[0] + rotation_x;

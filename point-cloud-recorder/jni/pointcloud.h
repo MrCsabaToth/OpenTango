@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef POINT_CLOUD_JNI_EXAMPLE_POINTCLOUD_H_
-#define POINT_CLOUD_JNI_EXAMPLE_POINTCLOUD_H_
+#ifndef POINT_CLOUD_JNI_POINTCLOUD_H_
+#define POINT_CLOUD_JNI_POINTCLOUD_H_
 
 #include "tango_data.h"
 #include "tango-gl-renderer/gl_util.h"
@@ -42,4 +42,4 @@ class Pointcloud {
   GLuint uniform_mvp_mat_;
 };
 
-#endif  // POINT_CLOUD_JNI_EXAMPLE_POINTCLOUD_H_
+#endif  // POINT_CLOUD_JNI_POINTCLOUD_H_
